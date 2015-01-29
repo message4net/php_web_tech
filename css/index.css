@@ -1,0 +1,18 @@
+@charset "gb2312";
+/* CSS Document */
+.ind #dl { /*定义左边区域*/
+	float: left;
+	width: 180px;
+}
+
+.ind #d2 { /*定义右边区域*/
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 180px;
+}
+
+.clear { /*清除左右布局*/
+	clear: both;
+	height: 0;
+}
