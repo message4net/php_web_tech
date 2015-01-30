@@ -16,3 +16,14 @@
 	clear: both;
 	height: 0;
 }
+
+.ind #container { /*定义页面容器*/
+	width: 780px;
+	margin: 0 auto;
+	padding: ;
+}
+
+body { /*重新定义页面主题的内外补丁*/
+	margin: 0px;
+	padding: 0px;
+}
