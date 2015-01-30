@@ -1,0 +1,63 @@
+@charset "gb2312";
+/* CSS Document */
+#rightbt1{/*定义热卖标题*/
+	background-image:url(../images/righttile.jpg);
+	background-repeat:no-repeat;
+	width:580px;
+	height:30px;
+	background-position:right bottom;
+	padding-top:2px;
+	padding-right:20px;
+}
+#rightbt2{/*定义特价标题*/
+	background-image:url(../images/righttile2.jpg);
+	background-repeat:no-repeat;
+	width:580px;
+	height:30px;
+	background-position:right bottom;
+	padding-top:2px;
+	padding-right:20px;
+}
+#rightbt3{/*定义推荐标题*/
+	background-image:url(../images/righttile3.jpg);
+	background-repeat:no-repeat;
+	width:580px;
+	height:30px;
+	background-position:right bottom;
+	padding-top:2px;
+	padding-right:20px;
+}
+#rightconnect {/*定义内容容器*/
+	height:90px;
+	width:580px;
+	padding-top:5px;
+	padding-right:20px;
+	padding-left:20px;
+	padding-bottom:2px;
+}
+#imgc{/*定义图书略缩图区域*/
+	height:55px;
+	width:55px;
+	padding:2px;
+	margin:2px;
+}
+a:link{
+	color:#399;
+	text-decoration:none;
+} 
+a:visited{
+	coor:#999;
+	text-decoration:none;
+}
+a:hover{
+	color:#F90;
+	text-decoration:underline;
+}
+a:active{
+	color:#0CC;
+	text-decoration:none;
+}
+table,tr,td{/*重新定义table,tr,td标记*/
+	margin:0px;
+	padding:0px;
+}

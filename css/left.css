@@ -1,0 +1,65 @@
+@charset "gb2312";
+/* CSS Document */
+#leftbg { /*定义左侧容器*/
+	background-image: url(../imagest/leftbg.jpg)
+	background-repeat: no-repeat;
+	width:180px;
+	height:380px;
+	background-position: center center;
+}
+#nume { /*定义图书搜索区域*/
+	padding-top:30px;
+}
+#sele { /*定义下拉列表*/
+	margin-left:4px;
+	margin-bottem:4px;
+}
+#f1 { /*定义分类查询和友情连接 */
+	padding:0px;
+	margin:0px;
+}
+.bt { /*定义标题*/
+	font-family: "宋体";
+	font-size:14px;
+	font-weigit:bold;
+	color:#399;
+}
+.txt { /*定义输入文本框中的文本*/
+ font-family:"宋体";
+ font-size:14px;
+}
+.text { /*定义输入文本框中的默认文本*/
+	font-family: "宋体";
+	font-size:14px;
+	font-style:italic;
+	color:#099;
+}
+fieldset{ /*重新定义fieldset标记*/
+	width:165px;
+	border:1px solid #399;
+	margin-right:6px;
+	margin-left:6px;
+	padding-top:2px;
+	padding-right:2px;
+	padding-bottom:2px;
+	padding-left:2px;
+}
+a:link {
+	color:#099;text-decoration:none;
+}
+a:visited{
+	color:#999;text-decoration:none;
+}
+a:hover{
+	color:#C30;text-decoration:none;
+}
+a:active{
+	color:#F96;text-decoration:none;
+}
+a {/*重新定义a标记*/
+	font-size:12px;
+} 
+form {/*重新定义form标记*/
+	margin:4px;
+	padding:0px;
+}
