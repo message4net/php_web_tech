@@ -1,0 +1,13 @@
+@charset "GB2312"
+/* CSS Document */
+#dd { /*定义计数器区域样式*/
+	font-size:14px;
+	color:#399;
+	text-align:center;
+	padding-top:14px;
+	height:90px;
+	width:220px;
+	font-weight:bold;
+	line-height:150%;
+	background-color:#FC9;
+}
