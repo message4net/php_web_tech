@@ -1,0 +1,36 @@
+@charset "gb2312";
+/* CSS Docment*/
+#bottom {/*定义底部容器*/
+	height:160px;
+	padding-top:2px;
+}
+#timersFrame{/*定义计数器*/
+padding-right:2px;
+padding-bottom:1px;
+}
+#copyright{/*定义版权信息*/
+padding-top:2px;
+height:60px;
+text-align:center;
+font-size:14px;
+lin-height:150%;
+}
+li{/*重新定义li标记*/
+padding:0px;
+list-style-position:inside;
+list-style-type:disc;
+margin-top:2px;
+}
+ul{/*重新定义ul标记*/
+padding:0px;
+margin-left:2px;
+list-style-positon:inside;
+}
+body{/*重新定义body标记*/
+margin:0px;
+padding:0px;
+}
+a:link{color:#399;}
+a:visited:{color:#906;}
+a:hover{color:#F90;}
+a:active{color:#099;}
