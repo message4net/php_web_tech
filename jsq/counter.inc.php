@@ -20,4 +20,5 @@
 	fputs($cf,$counter);
 	fclose($cf);
 	echo $counter;//输出计数器计数
+}
 	?>

@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=GB2312" />
 		<title>网站计数器-文本格式输出</title>
-		<link href="css/jsq.css" rel="stylesheet" type="text/css" />
+		<link href="jsq.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 	<?php
