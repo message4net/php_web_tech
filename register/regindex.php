@@ -27,6 +27,8 @@ require_once("reghead.php");?>
 			</tr>
 			<tr><td align="right">
 				<input type="submit" name="subm" value="登录" onmousedown="jcud()" /></td>
+				<td>
+				<input type="submit" name="subm" value="注册成为会员" /></td>
 			</tr>
 		</table>
 	</form>

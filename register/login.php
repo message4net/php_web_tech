@@ -14,8 +14,8 @@
 	$result=mysql_query($query,$connection) or die ("数据请求失败1！".mysql_error());
 	if($row=mysql_fetch_array($result)){
 		if($row[password]==$password){//身份认证成功
-		$query="select * from usercard where user_id='$userid'";//查询用户卡信息
-		$result1=@mysql_query($query,$connection) or die("数据请求失败2！");
+		$query="select * from usercard where userid='$userid'";//查询用户卡信息
+		$result1=@mysql_query($query,$connection) or die(mysql_error()."数据请求失败2！");
 		if($rowc=mysql_fetch_array($result1)){
 		//查询购书卡信息
 		$query="select * from card where cardno='$rowc[cardno]'";
@@ -37,7 +37,8 @@
 			$_SESSION['userid']=$_POST['userid'];
 			$msg="注册成功！可以购书啦！但没有购书卡，可以到会员管理中申请购书卡。";
 			$msg.="<a href='#';onclick=/'windows.close();return false;/''>返回</a>";
-			echo "<meta http-equiv='Refresh' content='0;url=regindex.php?msg=$msg'>";
+			$_SESSION['msg']="注册成功！可以购书啦！但没有购书卡，可以到会员管理中申请购书卡。";
+			echo "<meta http-equiv='Refresh' content='0;url=regindex.php'>";
 		}
 	}
 		else{

@@ -38,7 +38,7 @@ function jcidd(){
 		<td><input type="password" name="cardpsd" size="30"/></td></tr>
 		<tr><td colspac="2" align="center">
 		<input type="submit" name="select" value="下一步" onmousedown="jcidd()">
-		<input type="sbumit" name="select" value="跳过"></td></tr>
+		<input type="submit" name="select" value="跳过"></td></tr>
 	</table>
 </form>
 </div>
@@ -48,7 +48,7 @@ function jcidd(){
 2.如果不想申请购书卡，就单击【跳过】按钮。
 </div>
 <hr/>
-<ifame scrolling="no" width="780" height="60" src="regbottom.html"
+<iframe scrolling="no" width="780" height="60" src="regbottom.html"
 marginwidth="0" marginheight="0" border="0" frameborder="0" align="center">不支持</iframe>
 </div>
 </body>

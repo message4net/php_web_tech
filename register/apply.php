@@ -12,14 +12,15 @@
 	$result=msyql_query($query,$connection) or die ("浏览失败！1");//向数据库发送查询请求
 	if($row=mysql_fetch_array($result)){
 	$msg="该会员id已经被人使用，请重新填写";
-	echo "<meta http-equiv='Refresh' content='0;url=applycard.php?msg=$msg'>"
+	echo "<meta http-equiv='Refresh' content='0;url=applycard.php?msg=$msg'>";
 	}
 	else{
 		$query="select * from card where cardno='$cardno'";
 		$result=@mysql_query($query,$connection) or die ("浏览失败！2");
-		if($row[cardstatus]=="N"){
-			$msg="该卡不能使用！";
-			echo "<meta http-equiv='Refresh' content='0;url=applycard.php?msg=$msg'>"
+		if ($row=mysql_fetch_array($result)){
+			if($row[cardstatus]=="N"){
+				$msg="该卡不能使用!";
+				echo "<meta http-equiv='Refresh' content='0;url=applycard.php?msg=$msg'>";
 			}
 			elseif($row[cardpsd]==$cardpsd) include("applysrc.php");
 			else{
@@ -28,7 +29,7 @@
 			}
 		}
 		else{
-		$msg=""不存在该卡号，请重新输入;
+		$msg="不存在该卡号，请重新输入";
 		echo "<meta http-equiv='Refresh' content='0;url=applycard.php?msg=$msg'>";
 		}
 	}

@@ -51,14 +51,14 @@ require_once("reghead.php");?>
 					<td><input type="TEXT" size="20" name="phone"/></td></tr>
 				<tr><td colspan="2" align="center"><input type="submit" value="提交"
 				onmousedown="pdsr()"/><!--保存前面传递的数值到隐藏区域，以传递下一个程序>
-				<input type="hidden" name="cardno" value="<? echo $cardno;>">
-				<input type="hidden" name="cash" value="<? echo $row[balance];>"></td></tr>
+				<input type="hidden" name="cardno" value="<? echo $cardno;?>">
+				<input type="hidden" name="cash" value="<? echo $row[balance];?>"></td></tr>
 			</table>
 		</form>
 	</div>
 	<div id="err" align="center"><?php echo $msg; ?></div></div>
 	<hr/>
-	<ifame scrolling="no" width="780" height="60" src="regbottom.html"
+	<iframe scrolling="no" width="780" height="60" src="regbottom.html"
 marginwidth="0" marginheight="0" border="0" frameborder="0" align="center">不支持</iframe>
 </div>
 </body>
