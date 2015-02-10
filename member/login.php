@@ -20,4 +20,21 @@ window.frm.password.focus();
 	<div id="bt"><? echo $title;?><hr/></div>
 	<form name="frm" action="check.php?login=<?php echo $login;?>" method="post">
 		<table width="100%" boder="0" cellspacing="0" class="td1">
-		 <tr><>
+		 <tr><td width="30%" align="right">输入会员ID</td><td><input type="text" 
+		 name="userid" size="30" /></td></tr>
+		<?php if($login!=3) { ?>
+			<tr><td align="right">输入会员密码</td><td><input type="password" 
+			name="password" size="20"></td></tr>
+		<?php } ?>
+			<tr><td align="center" colspan=2><input type="submit" name="send" value="登录"
+			onmousedown="pdsr()"><input type="reset" value="重新输入"></td></tr>
+		</table>
+	</form>
+	<div id="err" align="center"><? echo $errmsg;?><br/></div>
+	</div>
+	<hr/>
+	<iframe scrolling="no" width="780" height="60" src="regbottom.html"
+marginwidth="0" marginheifht="0" border="0" frameborder="0" align="center">不支持</iframe>
+</div>
+</body>
+</html>
