@@ -17,7 +17,7 @@
 			echo "<meta http-equiv='Refresh' content='0;url=applycard?msg=$msg'>";
 			}//对输入表单合法性的检查
 		require("opendata.php.inc");//连接数据库，查询数据表card
-		$query="select * from card where cardno='$cardno';
+		$query="select * from card where cardno='$cardno'";
 		$result=@mysql_query($query,$connection) or die("浏览失败！a");
 		if($row=mysql_fetch_array($result)){//数据表card中存在用户输入的卡号
 			if($row[cardstatus]=="N"){//卡号状态不可用
@@ -64,7 +64,7 @@
 	<div id="err: align="center"><?php echo $msg; ?></div><!--反馈信息蓝-->
 	</div>
 	<hr/>
-		<iframe scrolling="no" width="780" height="60" src="regbottom.html"
+		<iframe scrolling="no" width="780" height="60" src="membottom.html"
 marginwidth="0" marginheifht="0" border="0" frameborder="0" align="center">不支持</iframe>
 </div>
 </body>

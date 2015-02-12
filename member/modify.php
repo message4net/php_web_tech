@@ -43,20 +43,20 @@
 		<tr><td align="right">会员id</td><td><input name="userid" type="text" disabled="disabled" value="<?php echo $userid;?>"
 		 size="40"/></td></tr>
 		<tr><td align="right">姓名</td><td><input type="text" size="40" name="username"
-		value="<?php echo $username";?>"/></td></tr>
+		value="<?php echo $username;?>"/></td></tr>
 		<tr><td align="right">Email</td><td><input type="text" size="40" name="eamil"
-		value="<?php echo $email";?>"/></td></tr>
+		value="<?php echo $email;?>"/></td></tr>
 		<tr><td align="right">会员密码</td><td><input type="text" size="40" name="password"
-		value="<?php echo $password";?>"/>&nbsp;&nbsp;&nbsp;</td></tr>
+		value="<?php echo $password;?>"/>&nbsp;&nbsp;&nbsp;</td></tr>
 		<tr><td align="right">再次输入密码</td><!--输入两次密码以确保修改密码无误-->
 		<td><input type="text" size="40" name="confirm1"
-		value="<?php echo $password";?>"/>&nbsp;&nbsp;&nbsp;</td></tr>
+		value="<?php echo $password;?>"/>&nbsp;&nbsp;&nbsp;</td></tr>
 		<tr><td align="right">邮编</td><td><input type="text" size="20" name="post"
-		value="<?php echo $post";?>"/></td></tr>
+		value="<?php echo $post;?>"/></td></tr>
 		<tr><td align="right">地址</td><td><input type="text" size="80" name="addr"
-		value="<?php echo $addr";?>"/></td></tr>
+		value="<?php echo $addr;?>"/></td></tr>
 		<tr><td align="right">电话号码</td><td><input type="text" size="20" name="phone"
-		value="<?php echo $phone";?>"/></td></tr>
+		value="<?php echo $phone;?>"/></td></tr>
 	<?php if($_GET['succeed']!=1){//修改成功后屏蔽下面的两个按钮?>
 		<tr><td colspan="2" align="center"><input name="sendup" type="submit" value="确认提交"
 		onmousedown="pdsr()">&nbsp;&nbsp;<input name="sendup" type="submit" value="重新填写"></td></tr>
@@ -66,7 +66,7 @@
 	<div id="err" align="center"><?php echo "$errmsg";?></div>
 	</div>
 	<hr/>
-		<iframe scrolling="no" width="780" height="60" src="regbottom.html"
+		<iframe scrolling="no" width="780" height="60" src="membottom.html"
 marginwidth="0" marginheifht="0" border="0" frameborder="0" align="center">不支持</iframe>
 </div>
 </body>

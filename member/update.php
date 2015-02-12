@@ -12,7 +12,7 @@
 		if($post!="") $sql1.=",post='$post'";
 		if($phone!="") $sql1.=",phone='$phone'";
 		require_once("opendata.php.inc");
-		sql="update userinfo set password='$password'".$sql1." where userid='$userid'";
+		$sql="update userinfo set password='$password'".$sql1." where userid='$userid'";
 		mysql_query($sql);
 		mysql_close();
 		$errmsg="修改信息：恭喜你，你已完成个人资料的修改!";//设置反馈信息

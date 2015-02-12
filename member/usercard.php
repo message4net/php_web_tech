@@ -6,8 +6,8 @@ require_once("opendata.php.inc");
 $sql="select * from usercard where userid='$userid'";
 $records=mysql_query($sql);//查询数据表usercard中指定会员id的信息
 if(mysql_num_rows($records)==0){//数据表usercard中没有指定会员id的信息
- $errmsg="没有申请过购书卡!;
- header("Location:applycard.php?errmsg=$errmsg);
+ $errmsg="没有申请过购书卡!";
+ header("Location:applycard.php?errmsg=$errmsg");
   }
 $total=mysql_num_rows($records);//统计数据表usercard中有指定会员id的信息数
 $lastp=ceil($total/$pagemax);//计算最大页码
@@ -29,7 +29,7 @@ $msg.="<a href=".$_SERVER['PHP_SELF']."?pageno=".($pageno-1).">上一页</a>|";
 if($pageno<$lastp)//当前页小于走后页时，要设置连接
 $msg.="<a href=".$_SERVER['PHP_SELF']."?pageno=".($pageno+1).">下一页</a>|";
 if($pageno!=$lastp)//当前页不是最后页时，对“上一页”要设置连接
-$msg.="<a href=".$_$ERVER['PHP_SELF']."?pageno=".($lastp).">最后页</a>";
+$msg.="<a href=".$_SERVER['PHP_SELF']."?pageno=".($lastp).">最后页</a>";
 else $msg.="最后页";//当前页是最后页时，不要设置连接
 $i=1;//读取指定会员的id卡号信息
 while($row=mysql_fetch_array($records)){
@@ -65,7 +65,7 @@ include("memhead.php");//包含头部
  	$time=($year+2)."年".$month."月".$day."日";//生成购书卡的有效期
  	echo "<tr align='center'><td>NO.".$i."</td>";
  	echo "<td>$nbsp;".$row2[cardno]."</td><td>&nbsp;".$row2[balance]."元</td><td>&nbsp;".
- 	$row2[cardlevle."</td>";
+ 	$row2[cardlevl]."</td>";
  	echo "<td>&nbsp;".$row2[cardpsd]."</td><td>&nbsp;".$time."</td></tr>";
  	}
  	?>
@@ -74,7 +74,7 @@ include("memhead.php");//包含头部
 		</table>
 		</form>
 	<div id="err" align="center"><?php echo "$msg"; ?></div> <!--翻页导航栏-->
-	<div id="err"><?php echo "$errmsg";></div>
+	<div id="err"><?php echo "$errmsg";?></div>
 	</div>
 	<hr/>
 		<iframe scrolling="no" width="780" height="60" src="regbottom.html"

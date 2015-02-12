@@ -1,5 +1,5 @@
 <?php
-$login=$_GET[login]
+$login=$_GET[login];
 if($login==1) $title="进入购书卡专区--请先输入ID及密码";
 elseif($login==2) $title="修改个人资料--请先输入ID及密码";
 elseif($login==3) $title="密码查询--请先输入ID";
@@ -33,7 +33,7 @@ window.frm.password.focus();
 	<div id="err" align="center"><? echo $errmsg;?><br/></div>
 	</div>
 	<hr/>
-	<iframe scrolling="no" width="780" height="60" src="regbottom.html"
+	<iframe scrolling="no" width="780" height="60" src="membottom.html"
 marginwidth="0" marginheifht="0" border="0" frameborder="0" align="center">不支持</iframe>
 </div>
 </body>
