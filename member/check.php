@@ -34,7 +34,7 @@
  $sql="select * from administer where userid='$userid'";
  $records=mysql_query($sql);
  $rows=mysql_fetch_array($records);
- if($psd<>$rows[password]or$IP_m<>$rows[IP]){
+ if($psd<>$rows[password] || $IP_m<>$rows[ip]){
  $errmsg="输入管理员帐号或密码错误!";
  header("Location:login.php?errmsg=$errmsg&login=$login");
   }

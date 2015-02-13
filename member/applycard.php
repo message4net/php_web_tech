@@ -26,11 +26,11 @@
 			}
 			elseif($row[cardpsd]==$password){//卡号状态可用并且输入密码正确
 				$errmsg="申请成功!";
-				$query="insert into usercard (userid,password,cardno) values('$userid','$password','$cardno')";
-				$result=@mysql_query($query,$connection) or die("浏览失败!b");
+				$query="insert into usercard (userid,cardno) values('$userid','$cardno')";
+				$result=@mysql_query($query,$connection) or die("浏览失败!b".mysql_error());
 				$query="update card set cardstatus='N' where cardno='$cardno'";
 				$result=@mysql_query($query,$connection) or die("浏览失败!c");
-				echo "<meta http-equiv='Refresh' content='0;url-usercard.php?errmsg=$errmsg'>";
+				echo "<meta http-equiv='Refresh' content='0;url=usercard.php?errmsg=$errmsg'>";
 			}
 			else{//卡号状态可用且用户输入的密码不正确
 				$msg="密码错误，请重新输入!";
@@ -53,7 +53,7 @@
 	<table width="100%" border="0" cellspacing="0" class="td1">
 		<tr><td width="30%" align="right">输入购书卡号</td><td><input type="text" name="cardno"
 		size="30"/>(位数4-30,必须由字母与数字组成</td></tr>
-		<tr><td align="right">输入购书卡密码</td><td><input type="password" name="password2"
+		<tr><td align="right">输入购书卡密码</td><td><input type="password" name="password"
 		size="20"/>(位数6-20,必须有字母数字组成)</td></tr>
 		<tr><td align="right">确认购书卡密码</td><td><input type="password" name="password2"
 		size="20"/></td></tr>

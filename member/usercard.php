@@ -46,7 +46,7 @@ include("memhead.php");//包含头部
 		<tr id="err"><td><div><?php echo $infostr; ?></div></td><!--状态栏-->
 			<td align="right">输入页次:<input type="text" size="3" name="pageno">
 				<input type="submit" value="转到"/></td>
-				<td>&bnsp;&bnsp;&bnsp;&bnsp;</td></tr><!--状态栏-->
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr><!--状态栏-->
 	</table>
 		</form>
 		<form action="applycard.php" method="post">
@@ -55,6 +55,7 @@ include("memhead.php");//包含头部
 				<td>等级</td><td>密码</td><td>有效日期</td></tr>
 <?php 
  for($i=$numf;$i<=$numl;$i++){//显示当前页的购书卡信息
+ 	mysql_query("set names gbk;");
  	$sql3="select * from card where cardno='$cardno[$i]'";
  	$records3=mysql_query($sql3);//查询指定卡号的购书卡信息
  	$row2=mysql_fetch_array($records3);
@@ -64,8 +65,8 @@ include("memhead.php");//包含头部
  	$day=substr($dbdate,8,2);//获取字符串中的日
  	$time=($year+2)."年".$month."月".$day."日";//生成购书卡的有效期
  	echo "<tr align='center'><td>NO.".$i."</td>";
- 	echo "<td>$nbsp;".$row2[cardno]."</td><td>&nbsp;".$row2[balance]."元</td><td>&nbsp;".
- 	$row2[cardlevl]."</td>";
+ 	echo "<td>&nbsp;".$row2[cardno]."</td><td>&nbsp;".$row2[balance]."元</td><td>&nbsp;".
+ 	$row2[cardlevel]."</td>";
  	echo "<td>&nbsp;".$row2[cardpsd]."</td><td>&nbsp;".$time."</td></tr>";
  	}
  	?>
@@ -77,7 +78,7 @@ include("memhead.php");//包含头部
 	<div id="err"><?php echo "$errmsg";?></div>
 	</div>
 	<hr/>
-		<iframe scrolling="no" width="780" height="60" src="regbottom.html"
+		<iframe scrolling="no" width="780" height="60" src="membottom.html"
 marginwidth="0" marginheifht="0" border="0" frameborder="0" align="center">不支持</iframe>
 </div>
 </body>
