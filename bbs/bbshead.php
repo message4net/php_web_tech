@@ -13,6 +13,6 @@
 		</div>
 		<div align="center" class="nemulink"><!--包含导航栏的区域-->
 			<a href="write.php">我要留言</a>|<a href="bbsview.php">查看留言</a>|
-			<a href="loginadmin.php">版主管理</a>|<a href="./index.php">返回首页</a>
+			<a href="loginadmin.php">版主管理</a>|<a href="./bbsindex.php">返回首页</a>
 		</div>
 	
