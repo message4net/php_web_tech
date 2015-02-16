@@ -1,0 +1,51 @@
+@charset "gb2312";
+/*CSS Document*/
+#appb{/*定义整个页面的样式*/
+width:600px;
+padding:1;
+margin:0 auto;
+}
+#bt { /*定义标题样式*/
+	font-size:18px;
+	font-weight:bold;
+	color:#399;
+	height:40px;
+	background-color:#FFC;
+	vertical-align:middle;
+	text-align:center;
+	padding-top:10px;
+}
+.tdl{/*定义表单样式*/
+	font-size:12px;
+	color:#F60;
+	background-color:#FFC;
+	margin:0px;
+	padding:0px;
+	border:0px none #FFF;
+}
+.tdd {/*定义表单样式*/
+	color:#399;
+	font-size:14px;
+	line-height:150%;
+}
+#bb {/*定义反馈信息栏样式*/
+color:#366;
+background-color:#FC6;
+border:thin solid #CCC;
+font-size:13px;
+line-height:150%;
+}
+table,form{
+	margin:0px;
+	padding:0px;
+}
+a:link {color:#399;}
+a:visited{}
+a:hover {color:#F90;}
+a:active{color:#099;}
+tr {line-height:150%;}
+hr{line-height:100%;}
+body{
+	padding:0px;
+	margin-top:2px;
+}
