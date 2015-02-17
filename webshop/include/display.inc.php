@@ -25,4 +25,27 @@ class display{
 	*/
 	public function GetJumpBar($data,$page=1,$url){
 		$count=count($data);
-		$pagelast=$this->Getpage
+		$pagelast=$this->GetpageNum($data);
+		$strJumpBar="";
+		if($pagelast<1) $pagelast=1;
+		if($page>$pagelast) $page=$pagelast;
+		if($count==0){
+				$msg1="暂无信息";
+				$pagelast=0;
+			}
+		else{
+				$msg1="当前页:".$page;
+				if($page<>1) $strJumpBar.="<a href='".$url."1'>第一页</a>";
+				else $strJumpBar.="第一页";
+				$strJumpBar.="|";
+				if($page>1) $strJumpBar.="<a href='".$url.($page-1)."'>上一页</a>|";
+				if($page<>$pagelast) $strJumpBar.="<a href='".$url.($page+1).".>
+				下一页</a>|";
+				if($page!=$pagelast) $strJumpBar.="<a href='".$url.($pagelast)."'>
+				最后页</a>";
+				else $strJumpBar.="最后页";
+			}
+			return array('JumpBar'=>$strJumpBar,'msg'=>$msg1);
+		}
+	}
+?>
