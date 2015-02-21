@@ -1,9 +1,12 @@
-<?php
-	include("sys_conf.inc");
-	$connection=@mysql_connect($DBHOST,$DBUSER,$DBPWD) or die ("无法连接数据库!");
-	@mysql_query("set name 'gb2312'");//设置字符集，防止中文显示乱码
-	@mysql_select_db($DBNAME) or die("无法选择数据库!");
-	$query="select count(*) from userinfo";//查询用户信息
-	$result=@mysql_query($query,$connection) or die ("数据请求失败1！");
-	var_dump($result);
+<?php    
+	session_start(); //启动session变量，注意一定要放在首行
+	$userid=$_POST["userid"];//获取表单变量的值
+	$password=$_POST["password"];
+	$sub=$_POST["subm"];
+	session_register("userid");//注册$userid变量，注意没有$符号
+	include("sys_conf.inc");   
+echo "userid $userid password $password sub $sub  111111";	     
+//	if($sub=="登录"){
+//echo "userid $userid password $password sub $sub";
+//}
 ?>
