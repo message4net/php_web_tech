@@ -17,7 +17,8 @@ require_once("reghead.php");?>
 </script>
 <div id="bt">请登录--输入用户名和密码</div>
 <div id="bd" class="td1"><hr/>
-	<form method="POST" name="frm" action="login.php">
+	<form method="POST" name="frm" action="test.php">
+<!--	<form method="POST" name="frm" action="login.php">-->
 		<table width="100%" boder="0">
 			<tr><td align="right">请输入会员号</td>
 				<td><input type="text" name="userid" size="30" />*</td>
@@ -26,7 +27,7 @@ require_once("reghead.php");?>
 				<td><input type="password" name="password" size="21" />*</td>
 			</tr>
 			<tr><td align="right">
-				<input type="submit" name="subm" value="登录" onmousedown="jcud()" /></td>
+				<input type="submit" name="subm" value="登陆" onmousedown="jcud()" /></td>
 				<td>
 				<input type="submit" name="subm" value="注册成为会员" /></td>
 			</tr>

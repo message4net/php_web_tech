@@ -7,7 +7,7 @@
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div id="rightbt1"><br/>&nbsp;&nbsp;&nbsp;<a href="#">更多...</a></div>
+		<div id="rightbt1"><br/>&nbsp;&nbsp;&nbsp;<a href="webshop/book_show.php?title=热卖图书&&serach=bookhot&&page=1&&pp=1">更多...</a></div>
 		<div id="rightconnect"> 
 			<table width="580" border="0" cellspacing="0">
 			<tr><td width="55"><a href="#"><img src="leftbg1.jpg" /></a></td>
@@ -17,7 +17,7 @@
 			</tr>
 			</table>
 		</div>
-		<div id="rightbt2"><br/>&nbsp;&nbsp;&nbsp;<a href="#">更多...</a></div>
+		<div id="rightbt2"><br/>&nbsp;&nbsp;&nbsp;<a href="webshop/book_show.php?title=特价图书&&serach=booksale&&page=1&&pp=1">更多...</a></div>
 		<div id="rightconnect"> 
 			<table width="580" border="0" cellspacing="0">
 			<tr><td width="55"><a href="#"><img src="leftbg.jpg" /></a></td>
@@ -27,7 +27,7 @@
 			</tr>
 			</table>
 		</div>
-		<div id="rightbt3"><br/>&nbsp;&nbsp;&nbsp;<a href="#">更多...</a></div>
+		<div id="rightbt3"><br/>&nbsp;&nbsp;&nbsp;<a href="webshop/book_show.php?title=推荐图书&&serach=bookrecommend&&page=1&&pp=1">更多...</a></div>
 		<div id="rightconnect"> 
 			<table width="580" border="0" cellspacing="0">
 			<tr><td width="55"><a href="#"><img src="leftbg.jpg" /></a></td>

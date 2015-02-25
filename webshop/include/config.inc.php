@@ -1,7 +1,7 @@
 <?php
-	define("DBHost","localhost");
+	define("DBHost","localhost:8889");
 	define("DBUser","root");
-	define("DBPassword","");
+	define("DBPassword","root");
 	define("DBName","bookshop");
 	define("Root_Path",dirname(_FILE_)'/');
 	define("Include_Path","./webshop/include/");
