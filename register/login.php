@@ -5,9 +5,9 @@
 	$sub=$_POST["subm"];
 	session_register("userid");//注册$userid变量，注意没有$符号
 	include("sys_conf.inc");   
-echo "userid $userid password $password sub $sub  111111";	     
+echo "userid".$userid."password".$password."sub".$sub."111111";	     
 	if($sub=="登录"){
-echo "userid $userid password $password sub $sub";
+echo "userid".$userid."password".$password."sub".$sub;	     
 //	//建立与sql数据库的连接
 //	$connection=mysql_connect($DBHOST,$DBUSER,$DBPWD) or die ("无法连接数据库!".mysql_error());
 //	mysql_query("set name 'gb2312'");//设置字符集，防止中文显示乱码                
@@ -15,7 +15,7 @@ echo "userid $userid password $password sub $sub";
 //	$query="select * from userinfo where userid='$userid'";//查询用户信息
 //	$result=mysql_query($query,$connection) or die ("数据请求失败1！".mysql_error());
 //	var_dump(mysql_fetch_array($result));
-////	if($row=mysql_fetch_array($result)){
+//	if($row=mysql_fetch_array($result)){
 //		if($row[password]==$password){//身份认证成功
 //		$query="select * from usercard where userid='$userid'";//查询用户卡信息
 //		$result1=@mysql_query($query,$connection) or die(mysql_error()."数据请求失败2！");
@@ -53,7 +53,7 @@ echo "userid $userid password $password sub $sub";
 //			$msg="不存在该会员id，请注册为新会员!";
 //			echo "<meta http-equiv='Refresh' content='0;url=regindex.php?meg=$msg'>";
 //	}
-//	}
+	}
 	else if($sub=="注册成为会员")
 		echo "<meta http-equiv='Refresh' content='0;url=applycard.php'>";
 ?>

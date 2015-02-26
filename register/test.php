@@ -5,8 +5,8 @@
 	$sub=$_POST["subm"];
 	session_register("userid");//×¢²á$userid±äÁ¿£¬×¢ÒâÃ»ÓÐ$·ûºÅ
 	include("sys_conf.inc");   
-echo "userid $userid password $password sub $sub  111111";	     
-//	if($sub=="µÇÂ¼"){
-//echo "userid $userid password $password sub $sub";
-//}
+echo "userid".$userid."password".$password."sub".$sub."111111";	      
+	if($sub=="µÇÂ¼"){
+echo "userid".$userid."password".$password."sub".$sub;	
+}
 ?>
