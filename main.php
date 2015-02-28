@@ -13,8 +13,8 @@
 			<tr>
 <?php
 	require_once('webshop/config.inc.php');
-	require_once('webshop/config.inc.php');
-	require_once('webshop/config.inc.php');
+	require_once('webshop/include/db.inc.php');
+	require_once('webshop/include/control.inc.php');
 	$books=new control();
 	$bookDBname="bookhot";
 	$serach=" 1 order by hot_order asc limit 0,2";//从数据表中2条记录
@@ -22,7 +22,7 @@
 	$count=count($book); $i=0;
 	while($i<$count){//输出要显示图书的信息到单元格中
 ?>
-			<td width="55"><a href="webshop/book_fullinfo.php?bookid=<?php echo $book[$i][book_ID];?>" target='_blank'>
+			<td width="55"><a href='webshop/book_fullinfo.php?bookid=<?php echo $book[$i][book_ID];?>' target='_blank'>
 			<img src="webshop/<?php echo $book[$i][book_pic];?>" /></a></td>
 				<td width="510">书名:<?php echo $book[$i][book_name];?><br/>ISBN:<?php 
 				echo $book[$i][book_no];?><br/>出版社:<?php echo $book[$i][publisher];?>出版社
@@ -46,8 +46,9 @@
 	$count=count($book); $i=0;
 	while($i<$count){//输出要显示图书的信息到相应的单元格中
 ?>
-			<td width="55"><a href="webshop/book_fullinfo.php?bookid=<?php echo
-			$book[$i][book_ID];>" target='_blank'><img id="imgc" alt="暂缺" src="webshop/<?php echo
+			<td width="55"><a href='webshop/book_fullinfo.php?bookid=<?php echo
+			$book[$i][book_ID];?>' target='_blank'><img id="imgc" alt="暂缺" 
+			src="webshop/<?php echo
 			 $book[$i][book_pic];?>" /></a></td>
 				<td width="500">书名:<?php echo $book[$i][book_name];?><br/>ISBN:
 				<?php echo $book[$i][book_no];?><br/>出版社:<?php echo $book[$i][publisher];?>

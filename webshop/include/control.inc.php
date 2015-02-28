@@ -11,7 +11,7 @@ class control extends DBSQL{
 	*·µ»Ø:Êı×é
 	*/
 	public function GetDTdataset($DTname,$search){
-		$sql="select * from $DBname where *.$search";
+		$sql="select * from $DBname where ".$search;
 		$data_s=$this->select($sql);
 		return $data_s;
 		}

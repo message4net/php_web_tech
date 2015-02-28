@@ -14,9 +14,9 @@
 	require_once('webshop/include/booktype.inc.php');
 	$bktc=new booktype();
 	$bklist=$bktc->GetBkTypeList();
-	tcount=count($bktlist);
+	$tcount=count($bktlist);
 	for($j=0;$j<$tcount;$j++){
-		$i=$bktlist[$j}[0];
+		$i=$bktlist[$j][0];
 		$tccount=$bktc->numb_item($i);
 		if($tccount>0){
 				if($item==$i && $item!=0){
@@ -29,8 +29,8 @@
 					</a>$nbsp;".$bktlist[$j][book_type_name]."<br/>";
 				}
 				else $nume.="&nbsp;&nbsp;&nbsp;<a href='webshop/book_show.php?title=
-				".$bktlist[$j]][book_type_name]."&&page=1&&serach=book_type_id=".$bktlist[$j]
-				[book_type_id."'target='mainFrame'>".$bktlist[$j][book_type_name]."</a>
+				".$bktlist[$j][book_type_name]."&&page=1&&serach=book_type_id=".$bktlist[$j]
+				[book_type_id]."'target='mainFrame'>".$bktlist[$j][book_type_name]."</a>
 				<br/>";
 			}
 			echo $nume;

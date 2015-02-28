@@ -16,6 +16,7 @@
 	if($pp==1) $serach=$DTname;
 	$ss="?title=$title&&pp=$pp&&serach=$serach&&page=";
 	$url="book_show.php".$ss;
+	$displaybook=new display($book_s,$books->_pageSize);
 	$displaybook->_pageSize=$books->_pageSize;//统一显示与数据分页的行数
 	$pagelast=$displaybook->GetpageNum($book_s);//提取显示的最后页码
 	$book=$books->GetControlList($book_s,$page);//提取当前的显示数据
@@ -35,7 +36,7 @@
 			<div id="bt">请您选购&mdash;&mdash;<?php echo $title;?><hr/></div>
 				<form action="<?php echo $url.($page2);?>" method="post" target="_self">
 				<table width="600" border="0" cellspacing="0" class="tdl">
-					<tr><td>共有<?php echo count($book_s; ?>本书&nbsp;&nbsp;共<?php echo
+					<tr><td>共有<?php echo count($book_s); ?>本书&nbsp;&nbsp;共<?php echo
 					$pagelast;?>页&nbsp;&nbsp;<?php echo $displaybar['JumpBar'];?></td>
 					<td align="right">输入页次:<input type="text" size="3" name="page1"
 					value="<?php echo $page1; ?>"><input type="submit" name="send2"value="转到"

@@ -11,15 +11,15 @@
 	$userIP=$_SERVER[REMOTE_ADDR];//获取用户的ip地址,以识别用户
 	$chat=new control();//创建购物车对象
 	if(is_array($bookbmm)){//判断用户是否选中了要购买的图书
-			foreach($bookbmm as $key=>$value{//寻找并处理被选中的图书
+			foreach($bookbmm as $key=>$value){//寻找并处理被选中的图书
 				$serach="(chat_seesion_ID='".$userIP."'AND book_ID=".$key.")";
 				if($value=="sel"){
-					if($booknumm[$key]<1 $msg1.="所选图书".$key."的购买数量应该为正
+					if($booknumm[$key]<1) $msg1.="所选图书".$key."的购买数量应该为正
 					整数!<br/>";
 					else{
 							$DTname="bookchat";
 							$chat_s=$chat->GetDTdataset($DTname,$serach);//查询用户是否选购过此书
-							if(count($chat_s)==0{//没有选购的处理
+							if(count($chat_s)==0){//没有选购的处理
 									$sql="insert into bookchat(user_ID,book_ID,buy_num,chat_seesion_ID 
 									values('$userid','$key','$booknumm[$key]','$userIP')";
 									$pp=$chat->insert($sql);//插入到购物车表中

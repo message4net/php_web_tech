@@ -7,7 +7,7 @@ class booktype extends DBSQL{
 	*功能:提取图书类列表
 	*返回:数组
 	*/
-	public fuction GetBkTypeList(){
+	public function GetBkTypeList(){
 	$sql="select * from booktype";
 	$b=$this->select($sql);
 	return $b;
@@ -28,7 +28,7 @@ class booktype extends DBSQL{
 	*/
 	public function numb_item($itemno){
 		$bktclist=$this->GetBkClassList($itemno);
-		$ccount=(count($bktclist);
+		$ccount=count($bktclist);
 		return $ccount;
 	}
 /**
@@ -41,8 +41,7 @@ class booktype extends DBSQL{
 			for($k=0;$k<$ccount;$k++)
 				$item.="&nbsp;&nbsp;&nbsp;&nbsp;<a href='webshop/book_show.php?title=
 				".$bktclist[$k][book_class_name]."&&page=1&&search=book_class_id=
-				".$bktclist[$k][book_class_id]."' traget="mainFrame'>".bktclist[$k][book_
-				class_name]."</a><br/>";
+				".$bktclist[$k][book_class_id]."' traget='mainFrame'>".$bktclist[$k][book_class_name]."</a><br/>";
 				return $item;
 			}
 		}

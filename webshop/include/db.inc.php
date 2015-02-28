@@ -7,10 +7,10 @@ private $CONN="";//定义数据库连接变量
 /**
 	*功能:构造函数，连接数据库
 	*/
-	public fuction __construct(){
+	public function __construct(){
 	 $connect=mysql_connect(DBHost,DBUser,DBPassword) or die("无法连接数据库");
 	 mysql_query("set names 'gb2312'");
-	 mysql_select_db(DBName); or die ("无法选择数据库");
+	 mysql_select_db(DBName) or die ("无法选择数据库");
 	 $this->CONN=$connect;
 	}
 /**
@@ -29,7 +29,7 @@ private $CONN="";//定义数据库连接变量
 	$count=0;
 	$data=array();
 	while($row=@mysql_fetch_array($results)){//把查询结果重组成一个而为数组
-	$data[count]=$row
+	$data[count]=$row;
 	$count++;
 	}
 	@mysql_free_result($results);
@@ -57,7 +57,7 @@ private $CONN="";//定义数据库连接变量
 	*参数:$sqlSQL语句
 	*返回:TRUEORFALSE
 	*/
-	public fuction update($sql=""){
+	public function update($sql=""){
 		if(empty($sql)) return false;//如果SQL语句为空则返回FALSE
 		if(empty($this->CONN)) return false;//如果连接为空则返回FALSE
 		try{//捕获数据库选择错误并显示错误文件
