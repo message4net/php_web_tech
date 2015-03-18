@@ -41,7 +41,7 @@ include("memhead.php");//包含头部
 ?>
 	<div id="bt">会员购书卡查询<hr/></div>
 	<div id="bd">
-		<form action="<?php echo $_SERVER['PHP_SELF']?>?pageno=<?php echo $pageno; ?>method="post">
+		<form action="<?php echo $_SERVER['PHP_SELF']?>?pageno=<?php echo $pageno; ?>" method="post">
 	<table width="100%" border="0" cellspacing="0" class="td1">
 		<tr id="err"><td><div><?php echo $infostr; ?></div></td><!--状态栏-->
 			<td align="right">输入页次:<input type="text" size="3" name="pageno">

@@ -21,7 +21,7 @@
 	<body>
 		<div id="leftbg" align="left">
 			<div id="nume">
-				<form name="frm1" method="post" action="search_key.php">
+				<form name="frm1" method="post" action="serach_key.php">
 					<fiedset><legend class="bt">Í¼ÊéËÑË÷</legend>
 						<input name="keys" id="sele" class="text" type="text" value="ÇëÊäÈë"
 						size="18" maxlength="20" onClick="this.value='';"/><br/>&nbsp;

@@ -40,9 +40,9 @@
 				<td class="tdd"><?php echo substr($book[0][pub_date],0,10); ?>
 				</td></tr>
 			<tr><td align="right">书号</td>
-				<td class="tdd"><?php echo $book[0][book_no]);?></td></tr>
+				<td class="tdd"><?php echo $book[0][book_no];?></td></tr>
 			<tr><td align="right">折扣价</td>
-				<td class="tdd"><?php pritf("%.2f",$book[0][book_l_price];?></td></tr>
+				<td class="tdd"><?php printf("%.2f",$book[0][book_l_price]);?></td></tr>
 			<tr><td align="right">会员价</td>
 				<td class="tdd"><?php echo $book[0][price_m];?></td></tr>
 			<tr><td align="right">等级</td>

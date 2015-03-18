@@ -2,57 +2,57 @@
 	require_once('config.inc.php');
 	require_once(Include_Path.'db.inc.php');
 	require_once(Include_Path.'control.inc.php');
-	require_once(Include_Path.'display.inc.php');//è¯·æ±‚åŒ…å«ç›¸åº”ç±»çš„æ–‡ä»¶
+	require_once(Include_Path.'display.inc.php');//ÇëÇó°üº¬ÏàÓ¦ÀàµÄÎÄ¼ş
 	$title=$_GET['title']; $serach=$_GET['serach'];
-	$pp=$_GET['pp']; $page=$_GET['page'];//è·å–ç”±urlä¼ é€’æ¥çš„æ•°æ®
-	if($pp==1){$DTname=$serach;$serach=1;}//ç”±ç‰¹è‰²å›¾ä¹¦é“¾æ¥è¿›å…¥,$serachçºªå½•æ•°æ®è¡¨åç§°
-	else $DTname="bookinfo";//ç”±æœç´¢èœå•æˆ–è¾“å…¥çš„æŸ¥è¯¢æ¡ä»¶è¿›å…¥
-	$serach=stripslashes($serach);//å»é™¤è‡ªåŠ¨æ·»åŠ çš„åæ–œæ \
-	$serach=eregi_replace("%27","'",$serach);//æŠŠ"%27æ›¿ä»£ä¸º'
+	$pp=$_GET['pp']; $page=$_GET['page'];//»ñÈ¡ÓÉurl´«µİÀ´µÄÊı¾İ
+	if($pp==1){$DTname=$serach;$serach=1;}//ÓÉÌØÉ«Í¼ÊéÁ´½Ó½øÈë,$serach¼ÍÂ¼Êı¾İ±íÃû³Æ
+	else $DTname="bookinfo";//ÓÉËÑË÷²Ëµ¥»òÊäÈëµÄ²éÑ¯Ìõ¼ş½øÈë
+	$serach=stripslashes($serach);//È¥³ı×Ô¶¯Ìí¼ÓµÄ·´Ğ±¸Ü\
+	$serach=eregi_replace("%27","'",$serach);//°Ñ"%27Ìæ´úÎª'
 	if($page<1) $page=1;
 	$books=new control();
-	$book_s=$books->Getbookdata($DTname,$serach);//è·å–è¦æ˜¾ç¤ºå›¾ä¹¦çš„æ•°æ®
-	$serach=eregi_replace("'","%27",$serach);//æŠŠ'æ›¿ä»£ä¸º"%27
+	$book_s=$books->Getbookdata($DTname,$serach);//»ñÈ¡ÒªÏÔÊ¾Í¼ÊéµÄÊı¾İ
+	$serach=eregi_replace("'","%27",$serach);//°Ñ'Ìæ´úÎª"%27
 	if($pp==1) $serach=$DTname;
 	$ss="?title=$title&&pp=$pp&&serach=$serach&&page=";
 	$url="book_show.php".$ss;
 	$displaybook=new display($book_s,$books->_pageSize);
-	$displaybook->_pageSize=$books->_pageSize;//ç»Ÿä¸€æ˜¾ç¤ºä¸æ•°æ®åˆ†é¡µçš„è¡Œæ•°
-	$pagelast=$displaybook->GetpageNum($book_s);//æå–æ˜¾ç¤ºçš„æœ€åé¡µç 
-	$book=$books->GetControlList($book_s,$page);//æå–å½“å‰çš„æ˜¾ç¤ºæ•°æ®
-	$displaybar=$displaybook->GetJumpBar($book_s,$page,$url);//ç”Ÿæˆåˆ†é¡µå¯¼èˆªæ ä¿¡æ¯
+	$displaybook->_pageSize=$books->_pageSize;//Í³Ò»ÏÔÊ¾ÓëÊı¾İ·ÖÒ³µÄĞĞÊı
+	$pagelast=$displaybook->GetpageNum($book_s);//ÌáÈ¡ÏÔÊ¾µÄ×îºóÒ³Âë
+	$book=$books->GetControlList($book_s,$page);//ÌáÈ¡µ±Ç°µÄÏÔÊ¾Êı¾İ
+	$displaybar=$displaybook->GetJumpBar($book_s,$page,$url);//Éú³É·ÖÒ³µ¼º½À¸ĞÅÏ¢
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=GB2312" />
-		<title>å›¾ä¹¦æ˜¾ç¤º</title>
+		<title>Í¼ÊéÏÔÊ¾</title>
 		<base target="mainFrame" />
 		<link href="css/bscss.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div id="appb">
-			<div id="bt">è¯·æ‚¨é€‰è´­&mdash;&mdash;<?php echo $title;?><hr/></div>
+			<div id="bt">ÇëÄúÑ¡¹º&mdash;&mdash;<?php echo $title;?><hr/></div>
 				<form action="<?php echo $url.($page2);?>" method="post" target="_self">
 				<table width="600" border="0" cellspacing="0" class="tdl">
-					<tr><td>å…±æœ‰<?php echo count($book_s); ?>æœ¬ä¹¦&nbsp;&nbsp;å…±<?php echo
-					$pagelast;?>é¡µ&nbsp;&nbsp;<?php echo $displaybar['JumpBar'];?></td>
-					<td align="right">è¾“å…¥é¡µæ¬¡:<input type="text" size="3" name="page1"
-					value="<?php echo $page1; ?>"><input type="submit" name="send2"value="è½¬åˆ°"
+					<tr><td>¹²ÓĞ<?php echo count($book_s); ?>±¾Êé&nbsp;&nbsp;¹²<?php echo
+					$pagelast;?>Ò³&nbsp;&nbsp;<?php echo $displaybar['JumpBar'];?></td>
+					<td align="right">ÊäÈëÒ³´Î:<input type="text" size="3" name="page1"
+					value="<?php echo $page1; ?>"><input type="submit" name="send2"value="×ªµ½"
 					/></td></tr>
 				</table>
 				</form>
 				<table width="600" border="1" cellspacing="1" class="tdl">
 				<form name="frm" action="chat_add.php<?php echo $ss;?>" method="post">
-					<tr align="center" id="bb"><td width="30">é€‰ä¸­</td><td width="200">
-					ä¹¦å</td>
-						<td width="150">ä½œè€…</td><td width="60">å‡ºç‰ˆç¤¾</td><td width="30>åŸä»·
+					<tr align="center" id="bb"><td width="30">Ñ¡ÖĞ</td><td width="200">
+					ÊéÃû</td>
+						<td width="150">×÷Õß</td><td width="60">³ö°æÉç</td><td width="30">Ô­¼Û
 						</td>
-						<td width="30">æŠ˜æ‰£</td><td width="60>è´­ä¹°æ•°é‡</td><td width="40">
-						è¯¦æƒ…</td></tr>
+						<td width="30">ÕÛ¿Û</td><td width="60">¹ºÂòÊıÁ¿</td><td width="40">
+						ÏêÇé</td></tr>
 <?php
-	for($j=0;$j<count($book);$j++){//æŒ‰è¡Œä¾æ¬¡è¾“å‡ºå›¾ä¹¦ä¿¡æ¯
+	for($j=0;$j<count($book);$j++){//°´ĞĞÒÀ´ÎÊä³öÍ¼ÊéĞÅÏ¢
 		echo "<tr class='tdl'>";
 		echo "<td align='center'><input type='checkbok' name='bookbm[".$book[$j]
 		[book_ID]."]' value='sel'>".$book[$j][book_ID]."</td>";
@@ -65,7 +65,7 @@
 		echo '</td><td align="center"><input type="text" size="4" name="buynum
 		['.$book[$j][book_ID].']">'.$buynum[$book[$j][book_ID]].'</td>';
 		echo "<td align='center'><a href='book_fullinfo.php?bookid=".$book[$j]
-		[book_ID]."' target='_blank'>è¯¦æƒ…..</a></td></tr>";
+		[book_ID]."' target='_blank'>ÏêÇé..</a></td></tr>";
 	}
 	if(count($book)<$books->_pagesize){
 		echo "<tr class='tdl'>";
@@ -75,9 +75,9 @@
 ?>
 	<tr><td colspan="8" align="right"><?php echo $displaybar['msg'];?>
 	</td></tr>
-	<tr id="bb"><td align="left" colspan="5">æç¤º:å…ˆé€‰ä¸­è´­ä¹°çš„ä¹¦ï¼Œå†å¡«å†™è´­ä¹°
-	çš„æ•°é‡,æœ€åå•å‡»ï¼»æ”¾å…¥è´­ç‰©è½¦ï¼½æŒ‰é’®</td>
-		<td colspac="3" align="center"><input type="submit" value="æ”¾å…¥è´­ç‰©è½¦"/>
+	<tr id="bb"><td align="left" colspan="5">ÌáÊ¾:ÏÈÑ¡ÖĞ¹ºÂòµÄÊé£¬ÔÙÌîĞ´¹ºÂò
+	µÄÊıÁ¿,×îºóµ¥»÷£Û·ÅÈë¹ºÎï³µ£İ°´Å¥</td>
+		<td colspac="3" align="center"><input type="submit" value="·ÅÈë¹ºÎï³µ"/>
 		</td></tr>
 	</from>
 	</table>

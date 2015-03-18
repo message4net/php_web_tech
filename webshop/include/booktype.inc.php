@@ -8,7 +8,7 @@ class booktype extends DBSQL{
 	*返回:数组
 	*/
 	public function GetBkTypeList(){
-	$sql="select * from booktype";
+	$sql="select * from book_type";
 	$b=$this->select($sql);
 	return $b;
 }
@@ -17,8 +17,8 @@ class booktype extends DBSQL{
 	*参数:图书类别
 	*返回:数组
 	*/
-	public function GetBkClaaList($search=1){
-		$sql="select * from bookclass where book_type_id='$search'";
+	public function GetBkClassList($search=1){
+		$sql="select * from book_class where book_type_id='$search'";
 		$b=$this->select($sql);
 		return $b;
 	}

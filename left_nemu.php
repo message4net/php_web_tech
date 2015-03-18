@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=GB2312" />
-		<title>鎼滅储鍥句功</title>
+		<title>搜索图书</title>
 		<link href="css/index.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
@@ -14,6 +14,7 @@
 	require_once('webshop/include/booktype.inc.php');
 	$bktc=new booktype();
 	$bklist=$bktc->GetBkTypeList();
+var_dump($bklist);	
 	$tcount=count($bktlist);
 	for($j=0;$j<$tcount;$j++){
 		$i=$bktlist[$j][0];

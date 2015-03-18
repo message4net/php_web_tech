@@ -4,7 +4,7 @@
  $errmsg="";$ok=0;//初始化自定义变量，$ok记录是否成功的查询到了密码
  if(isset($_GET['ok'])}//如果$ok值以GET方式传递，就获取他做为当前isnew的值
  $ok=$_GET['ok'];
- if(isset($_GET['errsmg'])) $errmsg=$_GET['errmsg']'
+ if(isset($_GET['errsmg'])) $errmsg=$_GET['errmsg'];
  $title="密码查询";
  include("memhead.php");
 ?>
